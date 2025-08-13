@@ -39,11 +39,7 @@ export const Results = ({ results }: { results: ResultData[] }) => {
       </TableHeader>
       <TableBody>
         {visibleResults.map((result) => (
-          <Result
-            id={result.id}
-            userId={result.userId}
-            normal={result.normal}
-          />
+          <Result key={result.id} result={result} />
         ))}
       </TableBody>
     </Table>
