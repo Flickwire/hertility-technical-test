@@ -20,7 +20,11 @@ export const Results = ({ results }: { results: ResultData[] }) => {
       </TableHeader>
       <TableBody>
         {results.map((result) => (
-          <Result id={result.id} userId={result.userId} />
+          <Result
+            id={result.id}
+            userId={result.userId}
+            normal={result.normal}
+          />
         ))}
       </TableBody>
     </Table>
