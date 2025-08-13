@@ -15,11 +15,16 @@ export const resultsHandler = async (_req: Request, res: Response) => {
             }
             if (normalRange.min > hormoneResult.value) {
                 hormoneResult.range = 'BELOW';
+                result.normal = false;
             } else if (normalRange.max < hormoneResult.value) {
                 hormoneResult.range = 'ABOVE';
+                result.normal = false;
             } else {
                 hormoneResult.range = 'NORMAL';
             }
+        }
+        if (typeof result.normal === 'undefined') {
+            result.normal = true;
         }
     }
     res.send(results);

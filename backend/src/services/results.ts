@@ -9,6 +9,7 @@ interface Results {
 	id: number;
     userId: number;
     hormoneResults: Array<HormoneResults>;
+    normal?: boolean;
 }
 
 type NormalRange = Record<string, {min: number, max: number}>
